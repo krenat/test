@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SplashFragment">
+
+    <fragment
+        android:id="@+id/SplashFragment"
+        android:name="com.test.ui.splash.SplashFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/splashToUsers"
+            app:destination="@id/UsersFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/UserFragment"
+        android:name="com.test.ui.user.UserFragment"
+        >
+        <argument
+            android:name="userUuid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/HistoryFragment"
+        android:name="com.test.ui.history.HistoryFragment"
+        android:label="label"
+        >
+    </fragment>
+    <fragment
+        android:id="@+id/UsersFragment"
+        android:name="com.test.ui.users.UsersFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/usersToUser"
+            app:destination="@id/UserFragment" />
+        <action
+            android:id="@+id/usersToHistory"
+            app:destination="@id/HistoryFragment" />
+    </fragment>
+</navigation>
